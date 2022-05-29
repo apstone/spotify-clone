@@ -6,8 +6,16 @@
 
     <ul class="navigation">
       <li v-for="(link, index) in links.main" :key="index" class="flex">
-        <a class="flex items-center"
-          ><component :is="determineIcon(link)" color="#B3B3B3" />
+        <a
+          class="flex items-center"
+          :class="{
+            active: activeLink === link,
+          }"
+          @click="onClickNavigation(link)"
+          ><component
+            :is="determineIcon(link)"
+            :color="activeLink === link ? '#fff' : 'B3B3B3'"
+          />
           <p class="pl-4 text-sm font-bold">{{ link }}</p>
         </a>
       </li>
@@ -68,8 +76,10 @@ export default {
     HeartIcon,
     ArrowDownCircleIcon,
   },
-  data() {
-    return {};
+  data: function () {
+    return {
+      activeLink: "Home",
+    };
   },
   computed: {
     links: () => links,
@@ -84,6 +94,10 @@ export default {
       } else if (icon === "Your library") {
         return BookIcon;
       }
+    },
+
+    onClickNavigation: function (link) {
+      this.activeLink = link;
     },
   },
 };
@@ -118,6 +132,10 @@ export default {
         display: flex;
         padding: 0 16px;
         height: 40px;
+
+        &.active {
+          color: #fff;
+        }
       }
     }
   }
