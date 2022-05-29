@@ -123,7 +123,7 @@ export default {
   }
 
   .install {
-    margin-top: 14px;
+    margin-top: auto;
     a {
       color: #b3b3b3;
       cursor: pointer;

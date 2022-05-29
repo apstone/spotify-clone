@@ -1,6 +1,7 @@
 <script setup>
 import Sidebar from "./components/Sidebar.vue";
 import BottomBar from "./components/BottomBar.vue";
+import MainContent from "./components/MainContent.vue";
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 </script>
@@ -9,9 +10,11 @@ import BottomBar from "./components/BottomBar.vue";
   <div class="h-screen">
     <div class="flex w-full">
       <div class="bg-black"><Sidebar /></div>
-      <div class="w-full overflow-hidden bg-spotify-black-400">Right Side</div>
+      <div class="w-full overflow-hidden">
+        <MainContent />
+      </div>
     </div>
-    <div class="w-full bg-spotify-black-400">
+    <div class="w-full">
       <BottomBar />
     </div>
   </div>

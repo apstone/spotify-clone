@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .bottom-bar {
+  background-color: #181818;
   height: 90px;
   border-top: 1px solid #282828;
   padding: 0 16px;
